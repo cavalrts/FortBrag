@@ -1,0 +1,308 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local FBLabel = Instance.new("TextLabel")
+local M1GarandPing = Instance.new("TextButton")
+local SlurpNoise = Instance.new("TextButton")
+local GrenadeLauncherSound = Instance.new("TextButton")
+local LoudMolotov = Instance.new("TextButton")
+local GlassBreaking = Instance.new("TextButton")
+local M14Noise = Instance.new("TextButton")
+local M = Instance.new("TextLabel")
+local CMDX = Instance.new("TextButton")
+local InfiniteYield = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(27, 109, 231)
+Frame.BorderSizePixel = 5
+Frame.Position = UDim2.new(0.210879296, 0, 0.296932518, 0)
+Frame.Size = UDim2.new(0, 682, 0, 356)
+Frame.Active = true
+Frame.Draggable = true
+
+
+FBLabel.Name = "FBLabel"
+FBLabel.Parent = Frame
+FBLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FBLabel.BackgroundTransparency = 1.000
+FBLabel.Size = UDim2.new(0, 682, 0, 50)
+FBLabel.Font = Enum.Font.GothamBlack
+FBLabel.Text = "Fort Brag GUI"
+FBLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+FBLabel.TextScaled = true
+FBLabel.TextSize = 14.000
+FBLabel.TextStrokeTransparency = -5.000
+FBLabel.TextWrapped = true
+
+M1GarandPing.Name = "M1 Garand Ping"
+M1GarandPing.Parent = Frame
+M1GarandPing.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+M1GarandPing.BorderSizePixel = 5
+M1GarandPing.Position = UDim2.new(0.0234604105, 0, 0.17696628, 0)
+M1GarandPing.Size = UDim2.new(0, 112, 0, 69)
+M1GarandPing.Font = Enum.Font.GothamBlack
+M1GarandPing.Text = "M1 Garand Ping"
+M1GarandPing.TextColor3 = Color3.fromRGB(0, 0, 0)
+M1GarandPing.TextScaled = true
+M1GarandPing.TextSize = 14.000
+M1GarandPing.TextWrapped = true
+M1GarandPing.MouseButton1Down:connect(function()
+	local scriptEnv = game:GetService("Players").LocalPlayer.PlayerScripts:FindFirstChild("effects.client")
+	shared.Func=nil
+
+
+	for i,v in next, getgc() do
+		if getinfo(v).name == 'play_audio' and getfenv(v).script == scriptEnv then
+			shared.Func= v
+		end
+	end
+
+	for _, c in next, game.Players:GetPlayers() do
+		local newTable = {
+			["Position"] = c.Character.PrimaryPart,
+			["SoundId"] = "rbxassetid://393678915",
+			["Replicate"] = true,
+			["Volume"] = 1,
+			["Effects"] = true
+		}
+		shared.Func(newTable)
+	end
+end)
+
+
+SlurpNoise.Name = "Slurp Noise"
+SlurpNoise.Parent = Frame
+SlurpNoise.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+SlurpNoise.BorderSizePixel = 5
+SlurpNoise.Position = UDim2.new(0.0234604105, 0, 0.783707857, 0)
+SlurpNoise.Size = UDim2.new(0, 112, 0, 69)
+SlurpNoise.Font = Enum.Font.GothamBlack
+SlurpNoise.Text = "Slurp Noise"
+SlurpNoise.TextColor3 = Color3.fromRGB(0, 0, 0)
+SlurpNoise.TextScaled = true
+SlurpNoise.TextSize = 14.000
+SlurpNoise.TextWrapped = true
+SlurpNoise.MouseButton1Down:connect(function()
+	local scriptEnv = game:GetService("Players").LocalPlayer.PlayerScripts:FindFirstChild("effects.client")
+	shared.Func=nil
+
+
+	for i,v in next, getgc() do
+		if getinfo(v).name == 'play_audio' and getfenv(v).script == scriptEnv then
+			shared.Func= v
+		end
+	end
+
+	for _, c in next, game.Players:GetPlayers() do
+		local newTable = {
+			["Position"] = c.Character.PrimaryPart,
+			["SoundId"] = "rbxassetid://10722059",
+			["Replicate"] = true,
+			["Volume"] = 1,
+			["Effects"] = true
+		}
+		shared.Func(newTable)
+	end
+end)
+
+
+GrenadeLauncherSound.Name = "Grenade Launcher Sound"
+GrenadeLauncherSound.Parent = Frame
+GrenadeLauncherSound.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+GrenadeLauncherSound.BorderSizePixel = 5
+GrenadeLauncherSound.Position = UDim2.new(0.821114302, 0, 0.17696631, 0)
+GrenadeLauncherSound.Size = UDim2.new(0, 112, 0, 69)
+GrenadeLauncherSound.Font = Enum.Font.GothamBlack
+GrenadeLauncherSound.Text = "Grenade Launcher Sound"
+GrenadeLauncherSound.TextColor3 = Color3.fromRGB(0, 0, 0)
+GrenadeLauncherSound.TextScaled = true
+GrenadeLauncherSound.TextSize = 14.000
+GrenadeLauncherSound.TextWrapped = true
+GrenadeLauncherSound.MouseButton1Down:connect(function()
+	local scriptEnv = game:GetService("Players").LocalPlayer.PlayerScripts:FindFirstChild("effects.client")
+	shared.Func=nil
+
+
+	for i,v in next, getgc() do
+		if getinfo(v).name == 'play_audio' and getfenv(v).script == scriptEnv then
+			shared.Func= v
+		end
+	end
+
+	for _, c in next, game.Players:GetPlayers() do
+		local newTable = {
+			["Position"] = c.Character.PrimaryPart,
+			["SoundId"] = "rbxassetid://131632972",
+			["Replicate"] = true,
+			["Volume"] = 1,
+			["Effects"] = true
+		}
+		shared.Func(newTable)
+	end
+end)
+
+
+LoudMolotov.Name = "Loud Molotov"
+LoudMolotov.Parent = Frame
+LoudMolotov.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+LoudMolotov.BorderSizePixel = 5
+LoudMolotov.Position = UDim2.new(0.821114302, 0, 0.497191042, 0)
+LoudMolotov.Size = UDim2.new(0, 112, 0, 69)
+LoudMolotov.Font = Enum.Font.GothamBlack
+LoudMolotov.Text = "Loud Molotov"
+LoudMolotov.TextColor3 = Color3.fromRGB(0, 0, 0)
+LoudMolotov.TextScaled = true
+LoudMolotov.TextSize = 14.000
+LoudMolotov.TextWrapped = true
+LoudMolotov.MouseButton1Down:connect(function()
+	local scriptEnv = game:GetService("Players").LocalPlayer.PlayerScripts:FindFirstChild("effects.client")
+	shared.Func=nil
+
+
+	for i,v in next, getgc() do
+		if getinfo(v).name == 'play_audio' and getfenv(v).script == scriptEnv then
+			shared.Func= v
+		end
+	end
+
+	for _, c in next, game.Players:GetPlayers() do
+		local newTable = {
+			["Position"] = c.Character.PrimaryPart,
+			["SoundId"] = "rbxassetid://156283121",
+			["Replicate"] = true,
+			["Volume"] = 1,
+			["Effects"] = true
+		}
+		shared.Func(newTable)
+	end
+end)
+
+
+GlassBreaking.Name = "GlassBreaking"
+GlassBreaking.Parent = Frame
+GlassBreaking.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+GlassBreaking.BorderSizePixel = 5
+GlassBreaking.Position = UDim2.new(0.821114302, 0, 0.783707857, 0)
+GlassBreaking.Size = UDim2.new(0, 112, 0, 69)
+GlassBreaking.Font = Enum.Font.GothamBlack
+GlassBreaking.Text = "Glass Breaking"
+GlassBreaking.TextColor3 = Color3.fromRGB(0, 0, 0)
+GlassBreaking.TextScaled = true
+GlassBreaking.TextSize = 14.000
+GlassBreaking.TextWrapped = true
+GlassBreaking.MouseButton1Down:connect(function()
+	local scriptEnv = game:GetService("Players").LocalPlayer.PlayerScripts:FindFirstChild("effects.client")
+	shared.Func=nil
+
+
+	for i,v in next, getgc() do
+		if getinfo(v).name == 'play_audio' and getfenv(v).script == scriptEnv then
+			shared.Func= v
+		end
+	end
+
+	for _, c in next, game.Players:GetPlayers() do
+		local newTable = {
+			["Position"] = c.Character.PrimaryPart,
+			["SoundId"] = "rbxassetid://626807593",
+			["Replicate"] = true,
+			["Volume"] = 1,
+			["Effects"] = true
+		}
+		shared.Func(newTable)
+	end
+end)
+
+
+M14Noise.Name = "M14 Noise"
+M14Noise.Parent = Frame
+M14Noise.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+M14Noise.BorderColor3 = Color3.fromRGB(0, 0, 0)
+M14Noise.BorderSizePixel = 5
+M14Noise.Position = UDim2.new(0.0234604105, 0, 0.497191012, 0)
+M14Noise.Size = UDim2.new(0, 112, 0, 69)
+M14Noise.Font = Enum.Font.GothamBlack
+M14Noise.Text = "M14 Noise"
+M14Noise.TextColor3 = Color3.fromRGB(0, 0, 0)
+M14Noise.TextScaled = true
+M14Noise.TextSize = 14.000
+M14Noise.TextWrapped = true
+M14Noise.MouseButton1Down:connect(function()
+	local scriptEnv = game:GetService("Players").LocalPlayer.PlayerScripts:FindFirstChild("effects.client")
+	shared.Func=nil
+
+
+	for i,v in next, getgc() do
+		if getinfo(v).name == 'play_audio' and getfenv(v).script == scriptEnv then
+			shared.Func= v
+		end
+	end
+
+	for _, c in next, game.Players:GetPlayers() do
+		local newTable = {
+			["Position"] = c.Character.PrimaryPart,
+			["SoundId"] = "rbxassetid://263683208",
+			["Replicate"] = true,
+			["Volume"] = 1,
+			["Effects"] = true
+		}
+		shared.Func(newTable)
+	end
+end)
+
+
+M.Name = "M"
+M.Parent = Frame
+M.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+M.BackgroundTransparency = 100.000
+M.Position = UDim2.new(0.391495585, 0, 0.123595513, 0)
+M.Size = UDim2.new(0, 147, 0, 39)
+M.Font = Enum.Font.GothamBlack
+M.Text = "Minions Edition"
+M.TextColor3 = Color3.fromRGB(255, 255, 0)
+M.TextScaled = true
+M.TextSize = 14.000
+M.TextStrokeTransparency = 0.000
+M.TextWrapped = true
+
+CMDX.Name = "CMD-X"
+CMDX.Parent = Frame
+CMDX.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+CMDX.BorderSizePixel = 5
+CMDX.Position = UDim2.new(0.416422278, 0, 0.342696637, 0)
+CMDX.Size = UDim2.new(0, 112, 0, 69)
+CMDX.Font = Enum.Font.GothamBlack
+CMDX.Text = "CMD- X"
+CMDX.TextColor3 = Color3.fromRGB(0, 0, 0)
+CMDX.TextScaled = true
+CMDX.TextSize = 14.000
+CMDX.TextWrapped = true
+CMDX.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+end)
+
+InfiniteYield.Name = "Infinite Yield"
+InfiniteYield.Parent = Frame
+InfiniteYield.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+InfiniteYield.BorderSizePixel = 5
+InfiniteYield.Position = UDim2.new(0.416422278, 0, 0.69101119, 0)
+InfiniteYield.Size = UDim2.new(0, 112, 0, 69)
+InfiniteYield.Font = Enum.Font.GothamBlack
+InfiniteYield.Text = "Infinite Yield"
+InfiniteYield.TextColor3 = Color3.fromRGB(0, 0, 0)
+InfiniteYield.TextScaled = true
+InfiniteYield.TextSize = 14.000
+InfiniteYield.TextWrapped = true
+InfiniteYield.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
